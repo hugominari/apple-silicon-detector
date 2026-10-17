@@ -380,6 +380,8 @@ class ZmqOnnxClient:
                 result = post_process_dfine(outputs, width, height)
             elif model_type == "rfdetr":
                 result = post_process_rfdetr(outputs)
+            else:
+                result = post_process_yolo(outputs, width, height)
 
             if logger.isEnabledFor(logging.DEBUG):
                 t_after_post = time.perf_counter()
